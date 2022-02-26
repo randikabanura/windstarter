@@ -141,6 +141,10 @@ def add_annotate
   rails_command 'generate annotate:install'
 end
 
+def add_javascript
+  run "yarn add local-time esbuild-rails trix @hotwired/stimulus @hotwired/turbo-rails @rails/activestorage @rails/ujs @rails/request.js"
+end
+
 unless rails_6_or_newer?
   puts 'Please use Rails 6.0 or newer to create a Windstarter application'
 end
@@ -155,6 +159,7 @@ after_bundle do
   add_users
   add_authorization
   add_jsbundling
+  add_javascript
   add_sidekiq
   add_friendly_id
   add_tailwind
