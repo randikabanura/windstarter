@@ -47,7 +47,7 @@ A separate `Procfile` is generated for deploying to production on Heroku.
 App uses `madmin` [gem](https://github.com/excid3/madmin), so you need to run the madmin generator:
 
 ```
-rails g madmin:install
+rails g madmin:install 
 ```
 
 This will install Madmin and generate resources for each of the models it finds.
