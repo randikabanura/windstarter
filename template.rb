@@ -135,6 +135,7 @@ end
 
 def add_tailwind
   rails_command 'css:install:tailwind'
+  insert_into_file 'tailwind.config.js', ",\nplugins: [require(\"daisyui\")],\n", after: "]"
 end
 
 def add_annotate
@@ -142,7 +143,7 @@ def add_annotate
 end
 
 def add_javascript
-  run "yarn add local-time esbuild-rails trix @hotwired/stimulus @hotwired/turbo-rails @rails/activestorage @rails/ujs @rails/request.js"
+  run "yarn add local-time daisyui esbuild-rails trix @hotwired/stimulus @hotwired/turbo-rails @rails/activestorage @rails/ujs @rails/request.js"
 end
 
 unless rails_6_or_newer?
